@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_navigation/figure_a.dart';
+import 'package:flutter_navigation/homepage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,8 +20,15 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class LoginScreen extends StatelessWidget {
+class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
+
+  @override
+  State<LoginScreen> createState() => _LoginScreenState();
+}
+
+class _LoginScreenState extends State<LoginScreen> {
+  UnfocusDisposition disposition = UnfocusDisposition.scope;
 
   @override
   Widget build(BuildContext context) {
@@ -113,9 +120,12 @@ class LoginScreen extends StatelessWidget {
                     ElevatedButton(
                       onPressed: () {
                         Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const FigureA()));
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomeScreen()))
+                            .then((value) {
+                          primaryFocus!.unfocus(disposition: disposition);
+                        });
                       },
                       style: ElevatedButton.styleFrom(
                         minimumSize: Size(200, 40),
