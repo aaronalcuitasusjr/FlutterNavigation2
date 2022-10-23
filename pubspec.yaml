@@ -63,6 +63,10 @@ flutter:
     - assets/images/background.png
     - assets/images/logo.png
     - assets/images/album_icon.png
+    - assets/images/album_icon_2.jpeg
+    - assets/images/album_icon_3.png
+    - assets/images/album_icon_4.jpeg
+    - assets/images/album_icon_5.jpg
     - assets/fonts/Roboto-Bold.ttf
 
   # An image asset can refer to one or more resolution-specific "variants", see
